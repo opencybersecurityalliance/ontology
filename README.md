@@ -1,1 +1,1 @@
-# opendxl-ontology
+# OpenDXL Ontology
