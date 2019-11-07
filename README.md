@@ -13,8 +13,7 @@ https://opendxl.github.io/opendxl-ontology/
 * Includes sample code that demonstrates how to integrate the ontology into existing security products and related solutions
 * Documented using the [OpenDXL API Specification](https://github.com/opendxl/opendxl-api-specification) format
 
-LICENSE
-Copyright 2019 McAfee, LLC
+## LICENSE
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at:
 
