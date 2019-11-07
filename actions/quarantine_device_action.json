@@ -1,0 +1,92 @@
+{
+  "openDxlApi": "0.1",
+  "info": {
+    "title": "Actions used to quarantine a device",
+    "version": "0.0.1",
+    "description": "Actions used to quarantine a device"
+  },
+  "requests": {
+    "/action/quarantine/device/by_hostname": {
+      "description": "Quarantines a device by its hostname",
+      "payload": {
+        "properties": {
+          "target": {
+            "properties": {
+              "device": {
+                "properties": {
+                  "hostname": {
+                    "type": "string",
+                    "description": "A hostname that can be used to connect to this device over a network"
+                  },
+                  "idn_hostname": {
+                    "type": "string",
+                    "description": "An internationalized hostname that can be used to connect to this device over a network"
+                  },
+                  "device_id": {
+                    "type": "string",
+                    "description": "An identifier that refers to this device within an inventory or management system"
+                  }
+                },
+                "description": "A 'Device' Target MUST contain at least one property."
+              }
+            }
+          }
+        },
+        "example": {
+          "target": {
+            "device": {
+              "hostname": "testdevice.local.com",
+              "device_id": "{cba1fc32-cc02-4f98-b210-35ecad2b5ea1}"
+            }
+          }
+        }
+      },
+      "response": {
+        "payload": {
+          "properties": {
+            "status": {
+              "type": "integer",
+              "enum" : [102, 200, 400, 401, 403, 404, 500, 501, 503]
+            }
+          },
+          "example": {
+            "status": 200
+          }
+        }
+      }
+    },
+    "/action/quarantine/device/by_mac_address": {
+      "description": "Quarantines a device by its MAC address",
+      "payload": {
+        "properties": {
+          "target": {
+            "properties": {
+              "mac_addr": {
+                "type": "string",
+                "description": "A Media Access Control (MAC) address - EUI-48 or EUI-64 as defined in [EUI]"
+              }
+            }
+          }
+        },
+        "example": {
+          "target": {
+            "mac_addr": "B8:CA:3A:77:A5:AE"
+          }
+        }
+      },
+      "response": {
+        "payload": {
+          "properties": {
+            "status": {
+              "type": "integer",
+              "enum" : [102, 200, 400, 401, 403, 404, 500, 501, 503]
+            }
+          },
+          "example": {
+            "status": 200
+          }
+        }
+      }
+    }
+  }
+}
