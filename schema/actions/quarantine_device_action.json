@@ -11,25 +11,7 @@
       "payload": {
         "properties": {
           "target": {
-            "properties": {
-              "device": {
-                "properties": {
-                  "hostname": {
-                    "type": "string",
-                    "description": "A hostname that can be used to connect to this device over a network"
-                  },
-                  "idn_hostname": {
-                    "type": "string",
-                    "description": "An internationalized hostname that can be used to connect to this device over a network"
-                  },
-                  "device_id": {
-                    "type": "string",
-                    "description": "An identifier that refers to this device within an inventory or management system"
-                  }
-                },
-                "description": "A 'Device' Target MUST contain at least one property."
-              }
-            }
+            "$ref": "schema/openc2_schema.json#/definitions/device"
           }
         },
         "example": {
@@ -45,12 +27,12 @@
         "payload": {
           "properties": {
             "status": {
-              "type": "integer",
-              "enum" : [102, 200, 400, 401, 403, 404, 500, 501, 503]
+              "$ref": "schema/openc2_schema.json#/definitions/response"
             }
           },
           "example": {
-            "status": 200
+            "status": 200,
+            "status_text": "Successfully quarantined device by hostname"
           }
         }
       }
@@ -60,12 +42,7 @@
       "payload": {
         "properties": {
           "target": {
-            "properties": {
-              "mac_addr": {
-                "type": "string",
-                "description": "A Media Access Control (MAC) address - EUI-48 or EUI-64 as defined in [EUI]"
-              }
-            }
+            "$ref": "schema/openc2_schema.json#/definitions/device"
           }
         },
         "example": {
@@ -78,12 +55,12 @@
         "payload": {
           "properties": {
             "status": {
-              "type": "integer",
-              "enum" : [102, 200, 400, 401, 403, 404, 500, 501, 503]
+              "$ref": "schema/openc2_schema.json#/definitions/response"
             }
           },
           "example": {
-            "status": 200
+            "status": 200,
+            "status_text": "Successfully quarantined device by mac address"
           }
         }
       }
