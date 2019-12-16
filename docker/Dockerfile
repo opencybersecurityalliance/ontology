@@ -15,12 +15,7 @@ RUN apt-get update \
     && pip install twine jsonschema
     
 RUN cd /root \
-    && git clone -b feature/107-proxy_support https://github.com/dowlingw/json-schema-ref-parser.git \
-    && cd json-schema-ref-parser \
-    && npm install \
-    && npm run build \
-    && npm install . \
-    && npm install -g . \
+    && npm install -g json-schema-ref-parser \
     && cd .. \
     && npm link json-schema-ref-parser
     
