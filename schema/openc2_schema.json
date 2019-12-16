@@ -1,0 +1,118 @@
+{
+    "openDxlApi": "0.1",
+    "$id": "http://opendxl-ontology/schemas/openc2.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "info": {
+        "title": "Type definitions",
+        "version": "0.0.1",
+        "description": "Type definitions"
+    },
+    "definitions": {
+        "artifact": {
+            "type": "object",
+            "properties": {
+                "mime_type": {
+                    "type": "string",
+                    "description": "Permitted values specified in the IANA Media Types registry, [RFC6838]"
+                },
+                "payload": {
+                    "$ref": "#/definitions/payload",
+                    "description": "Choice of literal content or URL"
+                },
+                "hashes": {
+                    "$ref": "#/definitions/hashes",
+                    "description": "Hashes of the payload content"
+                }
+            }
+        },
+        "device": {
+            "type": "object",
+            "properties": {
+                "hostname": {
+                    "$ref": "#/definitions/hostname"
+                },
+                "idn_hostname": {
+                    "$ref": "#/definitions/idn_hostname"
+                },
+                "device_id": {
+                    "type": "string",
+                    "description": "An identifier that refers to this device within an inventory or management system"
+                }
+            }
+        },
+        "uri": {
+            "type": "string",
+            "description": "Uniform Resource Identifier, [RFC3986]."
+        },
+        "domainName": {
+            "type": "string",
+            "description": "[RFC1034], Section 3.5"
+        },
+        "emailAddress": {
+            "type": "string",
+            "description": "Email address, [RFC5322], Section 3.4.1"
+        },
+        "file": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "The name of the file as defined in the file system"
+                },
+                "path": {
+                    "type": "string",
+                    "description": "The absolute path to the location of the file in the file system"
+                },
+                "hashes": {
+                    "$ref": "#/definitions/hashes",
+                    "description": "Hashes of the payload content"
+                }
+            }
+        },
+        "ipv4-address": {
+            "type": "string",
+            "description": "32 bit IPv4 address as defined in [RFC0791]"
+        },
+        "ipv6-address": {
+            "type": "string",
+            "description": "128 bit IPv6 address as defined in [RFC8200]"
+        },
+        "payload": {
+            "type": "object",
+            "properties": {
+                "bin": {
+                    "type": "string",
+                    "description": "Specifies the data contained in the artifact"
+                },
+                "url": {
+                    "$ref": "#/definitions/uri"
+                }
+            }
+        },
+        "hashes": {
+            "type": "object",
+            "properties": {
+                "md5": {
+                    "type": "string",
+                    "description": "MD5 hash as defined in [RFC1321]"
+                },
+                "sha1": {
+                    "type": "string",
+                    "description": "SHA1 hash as defined in [RFC6234]"
+                },
+                "sha256": {
+                    "type": "string",
+                    "description": "SHA256 hash as defined in [RFC6234]"
+                }
+            }
+        },
+        "hostname": {
+            "type": "string",
+            "description": "Internet host name as specified in [RFC1123]"
+        },
+        "idn_hostname": {
+            "type": "string",
+            "description": "Internationalized Internet host name as specified in [RFC5890], Section 2.3.2.3."
+        }
+    }
+}
