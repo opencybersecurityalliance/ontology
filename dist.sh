@@ -33,9 +33,13 @@ function process_schema() {
     outdir=$2
     echo "Processing '$schema' schema..."
 
+    schema_dir=$(dirname "$schema")
     schema_basename=$(basename "$schema")
     schema_no_ext="${schema_basename%.*}"
     schema_ref_deref="$outdir/$schema_no_ext-deref.json"
+
+    # Change to schema directory
+    cd $schema_dir || { fail "Unable to change to schema dir: $schema_dir"; }
     
     # Copy original schema to outdir
     cp "$schema" "$outdir" || { fail "Error copying: $schema"; }

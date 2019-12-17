@@ -11,62 +11,32 @@
       "payload": {
         "properties": {
           "target": {
-            "properties": {
-              "file": {
-                "properties": {
-                  "hashes": {
-                    "properties":{
-                      "sha256":{
-                        "type": "string",
-                        "description": "SHA256 hash of the file contents in Base16 (hex) encoding"
-                      },
-                      "sha1":{
-                        "type": "string",
-                        "description": "SHA1 hash of the file contents in Base16 (hex) encoding"  
-                      },
-                      "md5":{
-                        "type": "string",
-                        "description": "MD5 hash of the file contents in Base16 (hex) encoding"  
-                      }
-                    }
-                  },
-                  "name": {
-                    "type": "string",
-                    "description": "The name of the file as defined in the file system"
-                  },                
-                  "path": {
-                    "type": "string",
-                    "description": "The absolute path to the location of the file in the file system"
-                  }
-                },
-                "description": "A 'file' Target MUST contain at least one property. If specifying hashes, at least one hash type must be specified"
-              }
-            }
+            "$ref": "../openc2_schema.json#/definitions/file"
           }
         },
         "example": {
           "target": {
             "file": {
-              "hashes":{
-                  "sha256":"22fe72a34f006ea67d26bb7004e2b6941b5c3953d43ae7ec24d41b1a928a6973"
+              "hashes": {
+                "sha256": "22fe72a34f006ea67d26bb7004e2b6941b5c3953d43ae7ec24d41b1a928a6973"
               }
             }
-            }
           }
+        }
       },
       "response": {
         "payload": {
           "properties": {
             "status": {
-              "type": "integer",
-              "enum" : [102, 200, 400, 401, 403, 404, 500, 501, 503]
+              "$ref": "../openc2_schema.json#/definitions/response"
             }
           },
           "example": {
-            "status": 200
+            "status": 200,
+            "status_text": "Successfully blocked file"
           }
         }
-      }
+      }     
     }
   }
 }
