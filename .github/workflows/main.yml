@@ -1,6 +1,6 @@
 name: Build
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
   build:
@@ -8,11 +8,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout
+      uses: actions/checkout@v1
       with:
         submodules: recursive
-    - run: docker run -v $(pwd):/source opendxl/opendxl-ontology-dev /source/dist.sh
-    - uses: actions/upload-artifact@v1
+      
+    - name: Build and validate
+      run: docker run -v $(pwd):/source christsmith/ontology-dev /source/dist.sh
+      
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v1
       with:
         name: dist
         path: dist    
+
+    - name: Deploy to GitHub pages
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: master
+        BRANCH: gh-pages
+        FOLDER: dist
