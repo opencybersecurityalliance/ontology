@@ -8,11 +8,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout
+      uses: actions/checkout@v1
       with:
         submodules: recursive
-    - run: docker run -v $(pwd):/source christsmith/ontology-dev /source/dist.sh
-    - uses: actions/upload-artifact@v1
+      
+    - name: Build and validate
+      run: docker run -v $(pwd):/source christsmith/ontology-dev /source/dist.sh
+      
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v1
       with:
         name: dist
         path: dist    
