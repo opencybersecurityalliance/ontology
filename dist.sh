@@ -8,6 +8,7 @@ DIST_SCHEMA_ACTIONS_DIR=$DIST_SCHEMA_DIR/actions
 DIST_SCHEMA_NOTIFICATIONS_DIR=$DIST_SCHEMA_DIR/notifications
 ACTIONS_DIR=$SCRIPTPATH/schema/actions
 NOTIFICATIONS_DIR=$SCRIPTPATH/schema/notifications
+GH_PAGES_INDEX_FILE=$DIST_DIR/index.md
 
 #
 # Function that is invoked when the script fails.
@@ -36,6 +37,9 @@ function process_schema() {
     schema_no_ext="${schema_basename%.*}"
     schema_ref_deref="$outdir/$schema_no_ext-deref.json"
     
+    # Copy original schema to outdir
+    cp "$schema" "$outdir" || { fail "Error copying: $schema"; }
+
     # Dereference the json $ref values
     echo "Dereferencing schema file..."
     node /root/deref.js "$schema" > "$schema_ref_deref" \
@@ -64,7 +68,7 @@ function walk_schema_dir() {
     outdir=$2
     for f in "$schemadir"/*.json
     do
-        if [ -f $f ]; then
+        if [ -f $f ]; then        
             process_schema "$f" "$outdir"
         fi
     done
@@ -91,3 +95,7 @@ walk_schema_dir "$ACTIONS_DIR" "$DIST_SCHEMA_ACTIONS_DIR"
 
 # Walk notifications
 walk_schema_dir "$NOTIFICATIONS_DIR" "$DIST_SCHEMA_NOTIFICATIONS_DIR"
+
+# Generate index file for GitHub pages
+python $SCRIPTPATH/site/generatepagesindex.py "$GH_PAGES_INDEX_FILE" \
+    "$DIST_SCHEMA_ACTIONS_DIR" "$DIST_SCHEMA_NOTIFICATIONS_DIR"
