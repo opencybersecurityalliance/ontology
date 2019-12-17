@@ -89,6 +89,61 @@
                 }
             }
         },
+        "mac-address": {
+            "type": "string",
+            "description": "A Media Access Control (MAC) address - EUI-48 or EUI-64 as defined in [EUI]"
+        },
+        "version": {
+            "type": "string",
+            "description": "Major.Minor version number"
+        },
+        "response-type": {
+            "type": "object",
+            "properties": {
+                "none": {
+                    "type": "string",
+                    "description": "No response"
+                },
+                "ack": {
+                    "type": "string",
+                    "description": "Respond when Command received"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Respond with progress toward Command completion"
+                },
+                "complete": {
+                    "type": "string",
+                    "description": "Respond when all aspects of Command completed"
+                }
+            }
+        },
+        "status-code": {
+            "type": "integer",
+            "enum": [
+                102,
+                200,
+                400,
+                401,
+                403,
+                404,
+                500,
+                501,
+                503
+            ]
+        },       
+        "response": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "$ref": "#/definitions/status-code"
+                },
+                "status_text": {
+                    "type": "string",
+                    "description": "A free-form human-readable description of the Response status"
+                }               
+            }
+        },
         "hashes": {
             "type": "object",
             "properties": {
