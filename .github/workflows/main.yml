@@ -22,3 +22,10 @@ jobs:
         name: dist
         path: dist    
 
+    - name: Deploy to GitHub pages
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: master
+        BRANCH: gh-pages
+        FOLDER: dist
