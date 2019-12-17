@@ -62,6 +62,7 @@ def main():
     # argv[3] : Notifications directory
     output_file = open(sys.argv[1], "w+")
     walk_schema_dir(output_file, sys.argv[2], True)
+    output_file.write("\n")
     walk_schema_dir(output_file, sys.argv[3], False)
     output_file.close()
 
