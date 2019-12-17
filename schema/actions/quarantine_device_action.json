@@ -11,7 +11,7 @@
       "payload": {
         "properties": {
           "target": {
-            "$ref": "schema/openc2_schema.json#/definitions/device"
+            "$ref": "../openc2_schema.json#/definitions/device"
           }
         },
         "example": {
@@ -27,7 +27,7 @@
         "payload": {
           "properties": {
             "status": {
-              "$ref": "schema/openc2_schema.json#/definitions/response"
+              "$ref": "../openc2_schema.json#/definitions/response"
             }
           },
           "example": {
@@ -42,7 +42,7 @@
       "payload": {
         "properties": {
           "target": {
-            "$ref": "schema/openc2_schema.json#/definitions/device"
+            "$ref": "../openc2_schema.json#/definitions/device"
           }
         },
         "example": {
@@ -55,7 +55,7 @@
         "payload": {
           "properties": {
             "status": {
-              "$ref": "schema/openc2_schema.json#/definitions/response"
+              "$ref": "../openc2_schema.json#/definitions/response"
             }
           },
           "example": {

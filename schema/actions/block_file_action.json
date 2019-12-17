@@ -11,7 +11,7 @@
       "payload": {
         "properties": {
           "target": {
-            "$ref": "schema/openc2_schema.json#/definitions/file"
+            "$ref": "../openc2_schema.json#/definitions/file"
           }
         },
         "example": {
@@ -28,7 +28,7 @@
         "payload": {
           "properties": {
             "status": {
-              "$ref": "schema/openc2_schema.json#/definitions/response"
+              "$ref": "../openc2_schema.json#/definitions/response"
             }
           },
           "example": {
