@@ -49,7 +49,7 @@ def walk_schema_dir(output_file, directory, is_actions):
         actions = result_dict[action_type]
         url = actions["url"]
         output_file.write("* [" + action_type + "](" + url +
-                          " ([Specification](" + url + ".json))\n")
+                          ") ([Specification](" + url + ".json))\n")
         result = actions["result"]
         for action_key in sorted(result.keys()):
             action = result[action_key]
