@@ -57,7 +57,8 @@ function process_schema() {
     # Generate html
     echo "Generating HTML for schema..."
     schema_html_dir="$outdir/$schema_no_ext"
-    bootprint opendxl "$schema_ref_deref" "$schema_html_dir"
+    bootprint opendxl "$schema_ref_deref" "$schema_html_dir" \
+        || { fail "Error generating html for schema: $schema"; }
 }
 
 #
@@ -102,4 +103,5 @@ walk_schema_dir "$NOTIFICATIONS_DIR" "$DIST_SCHEMA_NOTIFICATIONS_DIR"
 
 # Generate index file for GitHub pages
 python $SCRIPTPATH/site/generatepagesindex.py "$GH_PAGES_INDEX_FILE" \
-    "$DIST_SCHEMA_ACTIONS_DIR" "$DIST_SCHEMA_NOTIFICATIONS_DIR"
+    "$DIST_SCHEMA_ACTIONS_DIR" "$DIST_SCHEMA_NOTIFICATIONS_DIR" \
+    || { fail 'Error generating GitHub pages index file.'; }
