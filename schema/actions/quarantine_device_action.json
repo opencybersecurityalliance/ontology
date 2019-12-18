@@ -1,13 +1,13 @@
 {
   "openDxlApi": "0.1",
   "info": {
-    "title": "Actions used to quarantine a device",
+    "title": "Quarantine device actions",
     "version": "0.0.1",
-    "description": "Actions used to quarantine a device"
+    "description": "Quarantine device actions"
   },
   "requests": {
     "/action/quarantine/device/by_hostname": {
-      "description": "Quarantines a device by its hostname",
+      "description": "Quarantine device by hostname",
       "payload": {
         "properties": {
           "target": {
@@ -38,7 +38,7 @@
       }
     },
     "/action/quarantine/device/by_mac_address": {
-      "description": "Quarantines a device by its MAC address",
+      "description": "Quarantine device by MAC address",
       "payload": {
         "properties": {
           "target": {
@@ -60,7 +60,7 @@
           },
           "example": {
             "status": 200,
-            "status_text": "Successfully quarantined device by mac address"
+            "status_text": "Successfully quarantined device by MAC address"
           }
         }
       }

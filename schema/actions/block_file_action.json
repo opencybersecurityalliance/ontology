@@ -1,13 +1,13 @@
 {
   "openDxlApi": "0.1",
   "info": {
-    "title": "Actions used to block a file",
+    "title": "Block file actions",
     "version": "0.0.1",
-    "description": "Actions used to block a file"
+    "description": "Block file actions"
   },
   "requests": {
     "/action/block/file/by_hash": {
-      "description": "Blocks a device by its hash",
+      "description": "Block file by hash",
       "payload": {
         "properties": {
           "target": {
