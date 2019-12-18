@@ -4,22 +4,12 @@ const fs = require('fs');
 var args = process.argv.slice(2);
 
 if (args.length < 1) {
-  console.log("Usage: <schema.json> [proxy]");
+  console.log("Usage: <schema.json>");
   process.exit(1);
 }
 
 var schema = args[0];
 var opts = null;
-
-if (args.length > 1) {
-  opts = {
-    resolve: {
-      http: {
-        proxy: args[1]
-      }
-    },
-  };
-}
 
 try {
   let mySchema = JSON.parse(fs.readFileSync(schema));

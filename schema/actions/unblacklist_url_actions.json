@@ -1,0 +1,31 @@
+{
+    "openDxlApi": "0.1",
+    "info": {
+        "title": "Unblacklist URL actions",
+        "version": "0.0.1",
+        "description": "Unblacklist URL actions"
+    },
+    "requests": {
+        "/action/unblacklist/url": {
+            "description": "Unblacklist URL",
+            "payload": {
+                "properties": {
+                    "target": {
+                        "$ref": "../openc2_schema.json#/definitions/target-uri"
+                    }
+                },
+                "example": {
+                    "target": {
+                        "uri": "http://example.com"
+                    }
+                }
+            },   
+            "response": {         
+                "$ref": "../common_schema.json#/definitions/response"
+            },
+            "errorResponses": {         
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
+        }
+    }
+}

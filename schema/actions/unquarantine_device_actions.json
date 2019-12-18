@@ -1,0 +1,52 @@
+{
+    "openDxlApi": "0.1",
+    "info": {
+        "title": "Unquarantine device actions",
+        "version": "0.0.1",
+        "description": "Unquarantine device actions"
+    },
+    "requests": {
+        "/action/unquarantine/device/by_hostname": {
+            "description": "Unquarantine device by hostname",
+            "payload": {
+                "properties": {
+                    "target": {
+                        "$ref": "../openc2_schema.json#/definitions/x-target-hostname"
+                    }
+                },
+                "example": {
+                    "target": {
+                        "hostname": "testdevice.local.com"
+                    }
+                }
+            },   
+            "response": {         
+                "$ref": "../common_schema.json#/definitions/response"
+            },
+            "errorResponses": {         
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
+        },
+        "/action/unquarantine/device/by_mac_address": {
+            "description": "Unquarantine device by MAC address",
+            "payload": {
+                "properties": {
+                    "target": {
+                        "$ref": "../openc2_schema.json#/definitions/target-mac-address"
+                    }
+                },
+                "example": {
+                    "target": {
+                        "mac_addr": "B8:CA:3A:77:A5:AE"
+                    }
+                }
+            },   
+            "response": {         
+                "$ref": "../common_schema.json#/definitions/response"
+            },
+            "errorResponses": {         
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
+        }
+    }
+}
