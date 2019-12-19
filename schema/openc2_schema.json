@@ -9,114 +9,92 @@
     },
     "definitions": {
         "target-artifact": {
-            "type": "object",
-            "properties": {
-                "artifact": {
-                    "type": "object",
-                    "properties": {
-                        "mime_type": {
-                            "type": "string",
-                            "description": "Permitted values specified in the IANA Media Types registry, [RFC6838]"
-                        },
-                        "payload": {
-                            "$ref": "#/definitions/data-payload",
-                            "description": "Choice of literal content or URL"
-                        },
-                        "hashes": {
-                            "$ref": "#/definitions/data-hashes",
-                            "description": "Hashes of the payload content"
-                        }
+            "artifact": {
+                "type": "object",
+                "properties": {
+                    "mime_type": {
+                        "type": "string",
+                        "description": "Permitted values specified in the IANA Media Types registry, [RFC6838]"
+                    },
+                    "payload": {
+                        "$ref": "#/definitions/data-payload",
+                        "description": "Choice of literal content or URL"
+                    },
+                    "hashes": {
+                        "$ref": "#/definitions/data-hashes",
+                        "description": "Hashes of the payload content"
                     }
                 }
             }
         },
         "target-device": {
-            "type": "object",
-            "properties": {
-                "device": {
-                    "type": "object",
-                    "properties": {
-                        "hostname": {
-                            "$ref": "#/definitions/data-hostname"
-                        },
-                        "idn_hostname": {
-                            "$ref": "#/definitions/data-idn_hostname"
-                        },
-                        "device_id": {
-                            "type": "string",
-                            "description": "An identifier that refers to this device within an inventory or management system"
-                        }
+            "device": {
+                "type": "object",
+                "properties": {
+                    "hostname": {
+                        "$ref": "#/definitions/data-hostname"
+                    },
+                    "idn_hostname": {
+                        "$ref": "#/definitions/data-idn_hostname"
+                    },
+                    "device_id": {
+                        "type": "string",
+                        "description": "An identifier that refers to this device within an inventory or management system"
                     }
                 }
             }
         },
         "target-uri": {
-            "type": "object",
-            "properties": {
-                "uri": {
-                    "type": "string",
-                    "description": "Uniform Resource Identifier, [RFC3986]."
-                }
+            "uri": {
+                "type": "string",
+                "description": "Uniform Resource Identifier, [RFC3986]."
             }
         },
         "target-domainName": {
-            "type": "object",
-            "properties": {
-                "domain_name": {
-                    "type": "string",
-                    "description": "[RFC1034], Section 3.5"
-                }
+            "domain_name": {
+                "type": "string",
+                "description": "[RFC1034], Section 3.5"
             }
         },
         "target-emailAddress": {
-            "type": "object",
-            "properties": {
-                "email_addr": {
-                    "type": "string",
-                    "description": "Email address, [RFC5322], Section 3.4.1"
-                }
+            "email_addr": {
+                "type": "string",
+                "description": "Email address, [RFC5322], Section 3.4.1"
             }
         },
         "target-mac-address": {
-            "type": "object",
-            "properties": {
-                "mac_addr": {
-                    "type": "string",
-                    "description": "A Media Access Control (MAC) address - EUI-48 or EUI-64 as defined in [EUI]"
-                }
+            "mac_addr": {
+                "type": "string",
+                "description": "A Media Access Control (MAC) address - EUI-48 or EUI-64 as defined in [EUI]"
             }
         },
         "target-file": {
-            "type": "object",
-            "properties": {
-                "file": {
-                    "type": "object",
-                    "properties": {
-                        "name": {
-                            "type": "string",
-                            "description": "The name of the file as defined in the file system"
-                        },
-                        "path": {
-                            "type": "string",
-                            "description": "The absolute path to the location of the file in the file system"
-                        },
-                        "hashes": {
-                            "$ref": "#/definitions/data-hashes",
-                            "description": "Hashes of the payload content"
-                        }
+            "file": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the file as defined in the file system"
+                    },
+                    "path": {
+                        "type": "string",
+                        "description": "The absolute path to the location of the file in the file system"
+                    },
+                    "hashes": {
+                        "$ref": "#/definitions/data-hashes",
+                        "description": "Hashes of the payload content"
                     }
                 }
             }
         },
         "x-target-hashes": {
-            "$ref": "#/definitions/data-hashes"
+            "hashes": {
+                "$ref": "#/definitions/data-hashes"
+            }
         },
         "x-target-hostname": {
-            "type": "object",
-            "properties": {
-                "hostname": {
-                    "$ref": "#/definitions/data-hostname"
-                }
+            "hostname": {
+                "$ref": "#/definitions/data-hostname"
             }
         },
         "data-ipv4-address": {

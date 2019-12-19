@@ -10,20 +10,21 @@
             "description": "Quarantine device by hostname",
             "payload": {
                 "properties": {
-                    "target": {
-                        "$ref": "../openc2_schema.json#/definitions/x-target-hostname"
-                    }
+                    "$ref": "../openc2_schema.json#/definitions/x-target-hostname"
                 },
+                "required": [
+                    "hostname"
+                ],
                 "example": {
-                    "target": {
-                        "hostname": "testdevice.local.com"
-                    }
+                    "hostname": "testdevice.local.com"
                 }
             },   
-            "response": {         
-                "$ref": "../common_schema.json#/definitions/response"
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
             },
-            "errorResponses": {         
+            "errorResponses": {
                 "$ref": "../common_schema.json#/definitions/errorResponses"
             }
         },
@@ -31,20 +32,21 @@
             "description": "Quarantine device by MAC address",
             "payload": {
                 "properties": {
-                    "target": {
-                        "$ref": "../openc2_schema.json#/definitions/target-mac-address"
-                    }
+                    "$ref": "../openc2_schema.json#/definitions/target-mac-address"
                 },
+                "required": [
+                    "mac_addr"
+                ],
                 "example": {
-                    "target": {
-                        "mac_addr": "B8:CA:3A:77:A5:AE"
-                    }
+                    "mac_addr": "B8:CA:3A:77:A5:AE"
                 }
             },   
-            "response": {         
-                "$ref": "../common_schema.json#/definitions/response"
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
             },
-            "errorResponses": {         
+            "errorResponses": {
                 "$ref": "../common_schema.json#/definitions/errorResponses"
             }
         }

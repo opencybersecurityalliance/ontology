@@ -10,22 +10,23 @@
             "description": "Block file by hash",
             "payload": {
                 "properties": {
-                    "target": {
-                        "$ref": "../openc2_schema.json#/definitions/x-target-hashes"
-                    }
+                    "$ref": "../openc2_schema.json#/definitions/x-target-hashes"
                 },
+                "required": [
+                    "hashes"
+                ],
                 "example": {
-                    "target": {
-                        "hashes": {
-                            "sha256": "22fe72a34f006ea67d26bb7004e2b6941b5c3953d43ae7ec24d41b1a928a6973"
-                        }
+                    "hashes": {
+                        "sha256": "22fe72a34f006ea67d26bb7004e2b6941b5c3953d43ae7ec24d41b1a928a6973"
                     }
                 }
             },   
-            "response": {         
-                "$ref": "../common_schema.json#/definitions/response"
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
             },
-            "errorResponses": {         
+            "errorResponses": {
                 "$ref": "../common_schema.json#/definitions/errorResponses"
             }
         }
