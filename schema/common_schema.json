@@ -1,0 +1,52 @@
+{
+    "openDxlApi": "0.1",
+    "$id": "http://opendxl-ontology/schemas/common.json",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "info": {
+        "title": "Type definitions",
+        "version": "0.0.1",
+        "description": "Type definitions"
+    },
+    "definitions": {
+        "response": {
+            "payload": {
+                "$ref": "openc2_schema.json#/definitions/x-data-success-status",
+                "example": {
+                    "status": 200,
+                    "status_text": "Action succeeded"
+                }
+            }
+        },
+        "errorResponses": {
+            "400": {
+                "description": "Bad Request"
+            },
+            "401": {
+                "description": "Unauthorized"
+            },
+            "403": {
+                "description": "Forbidden"
+            },
+            "404": {
+                "description": "Not Found"
+            },
+            "500": {
+                "description": "Internal Error"
+            },
+            "501": {
+                "description": "Not Implemented"
+            },
+            "503": {
+                "description": "Service Unavailable"
+            }
+        },
+        "responses": {
+            "response": {
+                "$ref": "#/definitions/response"
+            },
+            "errorResponses": {
+                "$ref": "#/definitions/errorResponses"
+            }
+        }
+    }
+}
