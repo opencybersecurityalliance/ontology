@@ -12,6 +12,9 @@
                 "properties": {
                     "$ref": "../openc2_schema.json#/definitions/target-uri"
                 },
+                "required": [
+                    "uri"
+                ],
                 "example": {
                     "uri": "http://example.com"
                 }

@@ -23,7 +23,7 @@
         "responseOtherFields": {
             "status": {
                 "description": "The status of the response",
-                "required": true,
+                "required": false,
                 "example": "200"
             },
             "status_text": {
