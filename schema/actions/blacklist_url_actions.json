@@ -10,20 +10,18 @@
             "description": "Blacklist URL",
             "payload": {
                 "properties": {
-                    "target": {
-                        "$ref": "../openc2_schema.json#/definitions/target-uri"
-                    }
+                    "$ref": "../openc2_schema.json#/definitions/target-uri"
                 },
                 "example": {
-                    "target": {
-                        "uri": "http://example.com"
-                    }
+                    "uri": "http://example.com"
                 }
-            },   
-            "response": {         
-                "$ref": "../common_schema.json#/definitions/response"
             },
-            "errorResponses": {         
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
+            },
+            "errorResponses": {
                 "$ref": "../common_schema.json#/definitions/errorResponses"
             }
         }

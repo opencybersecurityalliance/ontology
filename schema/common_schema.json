@@ -8,14 +8,30 @@
         "description": "Type definitions"
     },
     "definitions": {
-        "response": {
-            "payload": {
-                "$ref": "openc2_schema.json#/definitions/x-data-success-status",
-                "example": {
-                    "status": 200,
-                    "status_text": "Action succeeded"
-                }
+        "contextOtherFields" : {
+            "product_name": {
+                "description": "The source product of the message",
+                "required": false,
+                "example": "McAfee Threat Intelligence Exchange (TIE)"
+            },
+            "product_version": {
+                "description": "The source product version of the message",
+                "required": false,
+                "example": "3.0.0"
             }
+        },
+        "responseOtherFields": {
+            "status": {
+                "description": "The status of the response",
+                "required": true,
+                "example": "200"
+            },
+            "status_text": {
+                "description": "A free-form human-readable description of the Response status.",
+                "required": false,
+                "example": "The action succeeded."
+            },
+            "$ref": "#/definitions/contextOtherFields"
         },
         "errorResponses": {
             "400": {
@@ -38,14 +54,6 @@
             },
             "503": {
                 "description": "Service Unavailable"
-            }
-        },
-        "responses": {
-            "response": {
-                "$ref": "#/definitions/response"
-            },
-            "errorResponses": {
-                "$ref": "#/definitions/errorResponses"
             }
         }
     }
