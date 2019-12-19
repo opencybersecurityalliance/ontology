@@ -8,17 +8,25 @@
         "description": "Type definitions"
     },
     "definitions": {
-        "contextOtherFields" : {
+        "contextOtherFields": {
             "product_name": {
-                "description": "The source product of the message",
+                "description": "The product that is the source of the message",
                 "required": false,
                 "example": "McAfee Threat Intelligence Exchange (TIE)"
             },
             "product_version": {
-                "description": "The source product version of the message",
+                "description": "The version of the product that is the source of the message",
                 "required": false,
                 "example": "3.0.0"
             }
+        },
+        "notificationOtherFields": {
+            "service_id": {
+                "description": "The identifier of the DXL service that is the source of the notification",
+                "required": false,
+                "example": "{32cd9168-338f-11e4-0d01-005056946833}"
+            },
+            "$ref": "#/definitions/contextOtherFields"
         },
         "responseOtherFields": {
             "status": {

@@ -17,7 +17,7 @@ def process_schema_file(schema_file, result_dict, is_actions):
 
         result = {}
         messages = data['requests' if is_actions else 'events']
-        baseurl = "schema/" + "actions" if is_actions else 'notifications' + "/"
+        baseurl = "schema/" + ("actions" if is_actions else 'notifications')
         m = re.match(".*/(.*)-deref.json", schema_file)
         name = m.group(1)
         schema_url = baseurl + "/" + name
