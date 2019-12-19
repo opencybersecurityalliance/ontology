@@ -10,13 +10,13 @@
             "description": "Blacklist URL",
             "payload": {
                 "properties": {
-                    "$ref": "../openc2_schema.json#/definitions/target-uri"
+                    "$ref": "../openc2_schema.json#/definitions/x-target-url"
                 },
                 "required": [
-                    "uri"
+                    "url"
                 ],
                 "example": {
-                    "uri": "http://example.com"
+                    "url": "http://example.com"
                 }
             },
             "response": {

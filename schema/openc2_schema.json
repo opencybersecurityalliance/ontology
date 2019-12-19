@@ -97,6 +97,12 @@
                 "$ref": "#/definitions/data-hostname"
             }
         },
+        "x-target-url": {
+            "url": {
+                "type": "string",
+                "description": "Uniform Resource Identifier, [RFC3986]."
+            }
+        },
         "data-ipv4-address": {
             "type": "string",
             "description": "32 bit IPv4 address as defined in [RFC0791]"
