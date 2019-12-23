@@ -1,0 +1,59 @@
+{
+    "openDxlApi": "0.1",
+    "info": {
+        "title": "Block file notifications",
+        "version": "0.0.1",
+        "description": "Block file notifications"
+    },
+    "events": {
+        "/notification/block/file/by_hash": {
+            "description": "Block file by hash notification",
+            "payload": {
+                "properties": {
+                    "hashes": {
+                        "type": "object",
+                        "properties": {
+                            "md5": {
+                                "type": "string",
+                                "description": "MD5 hash as defined in [RFC1321]"
+                            },
+                            "sha1": {
+                                "type": "string",
+                                "description": "SHA1 hash as defined in [RFC6234]"
+                            },
+                            "sha256": {
+                                "type": "string",
+                                "description": "SHA256 hash as defined in [RFC6234]"
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "hashes"
+                ],
+                "example": {
+                    "hashes": {
+                        "sha256": "22fe72a34f006ea67d26bb7004e2b6941b5c3953d43ae7ec24d41b1a928a6973"
+                    }
+                }
+            },
+            "otherFields": {
+                "service_id": {
+                    "description": "The identifier of the DXL service that is the source of the notification",
+                    "required": false,
+                    "example": "{32cd9168-338f-11e4-0d01-005056946833}"
+                },
+                "product_name": {
+                    "description": "The product that is the source of the message",
+                    "required": false,
+                    "example": "McAfee Threat Intelligence Exchange (TIE)"
+                },
+                "product_version": {
+                    "description": "The version of the product that is the source of the message",
+                    "required": false,
+                    "example": "3.0.0"
+                }
+            }
+        }
+    }
+}

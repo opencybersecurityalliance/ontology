@@ -1,0 +1,21 @@
+## Actions
+* [Blacklist URL actions](schema/actions/blacklist_url_actions) ([Specification](schema/actions/blacklist_url_actions-deref.json))
+  * [Blacklist URL](schema/actions/blacklist_url_actions#request--action-blacklist-url)
+* [Block file actions](schema/actions/block_file_actions) ([Specification](schema/actions/block_file_actions-deref.json))
+  * [Block file by hash](schema/actions/block_file_actions#request--action-block-file-by_hash)
+* [Quarantine device actions](schema/actions/quarantine_device_actions) ([Specification](schema/actions/quarantine_device_actions-deref.json))
+  * [Quarantine device by MAC address](schema/actions/quarantine_device_actions#request--action-quarantine-device-by_mac_address)
+  * [Quarantine device by hostname](schema/actions/quarantine_device_actions#request--action-quarantine-device-by_hostname)
+* [Unblacklist URL actions](schema/actions/unblacklist_url_actions) ([Specification](schema/actions/unblacklist_url_actions-deref.json))
+  * [Unblacklist URL](schema/actions/unblacklist_url_actions#request--action-unblacklist-url)
+* [Unblock file actions](schema/actions/unblock_file_actions) ([Specification](schema/actions/unblock_file_actions-deref.json))
+  * [Unblock file by hash](schema/actions/unblock_file_actions#request--action-unblock-file-by_hash)
+* [Unquarantine device actions](schema/actions/unquarantine_device_actions) ([Specification](schema/actions/unquarantine_device_actions-deref.json))
+  * [Unquarantine device by MAC address](schema/actions/unquarantine_device_actions#request--action-unquarantine-device-by_mac_address)
+  * [Unquarantine device by hostname](schema/actions/unquarantine_device_actions#request--action-unquarantine-device-by_hostname)
+
+## Notifications
+* [Block file notifications](schema/notifications/block_file_notification) ([Specification](schema/notifications/block_file_notification-deref.json))
+  * [Block file by hash notification](schema/notifications/block_file_notification#event--notification-block-file-by_hash)
+* [Unblock file notifications](schema/notifications/unblock_file_notification) ([Specification](schema/notifications/unblock_file_notification-deref.json))
+  * [Unblock file by hash notification](schema/notifications/unblock_file_notification#event--notification-unblock-file-by_hash)

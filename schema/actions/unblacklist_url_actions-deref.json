@@ -1,0 +1,74 @@
+{
+    "openDxlApi": "0.1",
+    "info": {
+        "title": "Unblacklist URL actions",
+        "version": "0.0.1",
+        "description": "Unblacklist URL actions"
+    },
+    "requests": {
+        "/action/unblacklist/url": {
+            "description": "Unblacklist URL",
+            "payload": {
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "description": "Uniform Resource Identifier, [RFC3986]."
+                    }
+                },
+                "required": [
+                    "url"
+                ],
+                "example": {
+                    "url": "http://example.com"
+                }
+            },
+            "response": {
+                "otherFields": {
+                    "status": {
+                        "description": "The status of the response",
+                        "required": false,
+                        "example": "200"
+                    },
+                    "status_text": {
+                        "description": "A free-form human-readable description of the Response status.",
+                        "required": false,
+                        "example": "The action succeeded."
+                    },
+                    "product_name": {
+                        "description": "The product that is the source of the message",
+                        "required": false,
+                        "example": "McAfee Threat Intelligence Exchange (TIE)"
+                    },
+                    "product_version": {
+                        "description": "The version of the product that is the source of the message",
+                        "required": false,
+                        "example": "3.0.0"
+                    }
+                }
+            },
+            "errorResponses": {
+                "400": {
+                    "description": "Bad Request"
+                },
+                "401": {
+                    "description": "Unauthorized"
+                },
+                "403": {
+                    "description": "Forbidden"
+                },
+                "404": {
+                    "description": "Not Found"
+                },
+                "500": {
+                    "description": "Internal Error"
+                },
+                "501": {
+                    "description": "Not Implemented"
+                },
+                "503": {
+                    "description": "Service Unavailable"
+                }
+            }
+        }
+    }
+}

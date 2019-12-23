@@ -1,0 +1,34 @@
+{
+    "openDxlApi": "0.1",
+    "info": {
+        "title": "Unblock file actions",
+        "version": "0.0.1",
+        "description": "Unblock file actions"
+    },
+    "requests": {
+        "/action/unblock/file/by_hash": {
+            "description": "Unblock file by hash",
+            "payload": {
+                "properties": {
+                    "$ref": "../openc2_schema.json#/definitions/x-target-hashes"
+                },
+                "required": [
+                    "hashes"
+                ],
+                "example": {
+                    "hashes": {
+                        "sha256": "22fe72a34f006ea67d26bb7004e2b6941b5c3953d43ae7ec24d41b1a928a6973"
+                    }
+                }
+            },   
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
+            },
+            "errorResponses": {
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
+        }
+    }
+}

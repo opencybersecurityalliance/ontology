@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <title>Bootprint</title>
+                                                         </head>
+<body>
+<div class="container">
+    <h1>Unblacklist URL actions</h1>
+    <p class="odxl-info">
+        Version: <span class="odxl-info-version">0.0.1</span>
+    </p>
+    <p><p>Unblacklist URL actions</p>
+    </p>
+    
+        <h2>Requests</h2>
+        
+            <div id="request--action-unblacklist-url" class="opendxl--panel-request panel">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="name"><strong>/action/unblacklist/url</strong></h3>        
+                </div>
+                <div class="panel-body">        
+                    <section class="odxl-request-payload">
+                            <p>Unblacklist URL</p>
+                    
+                                <div class="row">
+                                    <div class="col-md-12 odxl-request-model">
+                                        <div id="definition-payload" class="panel panel-definition">
+                                                <div class="panel-heading">
+                                                        <h3 class="panel-title"><a name="/definitions/payload"></a>payload:
+                                                            <span class="json-property-type">
+                                        <span class="json-property-type">object</span>
+                                        <span class="json-property-range" title="Value limits"></span>
+                                        
+                                        </span>
+                                                        </h3>
+                                                </div>
+                                            <div class="panel-body">
+                                                        <section class="json-schema-example">
+                                                            <pre><code class="lang-json">{<br>    &quot;<span class="hljs-attribute">url</span>&quot;: <span class="hljs-value"><span class="hljs-string">&quot;http://example.com&quot;</span><br></span>}
+                                                    </code></pre>
+                                                    
+                                                        </section>
+                                                    
+                                                        <section class="json-schema-properties">
+                                                            <dl>
+                                                                    <dt data-property-name="url">
+                                                                        <span class="json-property-name">url:</span>
+                                                                        
+                                                                        <span class="json-property-type">string</span>
+                                                                        <span class="json-property-range" title="Value limits"></span>
+                                                                        
+                                                                            <span class="json-property-required"></span>
+                                                                    </dt>
+                                                                    <dd>
+                                                                        <p>Uniform Resource Identifier, [RFC3986].</p>
+                                                        
+                                                                        <div class="json-inner-schema">
+                                                                            
+                                                                        </div>
+                                                                    </dd>
+                                                            </dl>
+                                                        </section>
+                                            </div>
+                                        </div>        </div>
+                                </div>                    
+                    </section>
+                            
+                    
+                        <section class="odxl-response-payload">
+                                <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="odxl-param-otherField"></th>
+                                                <th class="odxl-param-description"></th>
+                                                <th class="odxl-param-annotation"></th>
+                                                <th class="odxl-param-example"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            product_name
+                                                        </td>
+                                                        <td>
+                                                            <p>The product that is the source of the message</p>
+                                                
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                            McAfee Threat Intelligence Exchange (TIE)
+                                                        </td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            product_version
+                                                        </td>
+                                                        <td>
+                                                            <p>The version of the product that is the source of the message</p>
+                                                
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                            3.0.0
+                                                        </td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            status
+                                                        </td>
+                                                        <td>
+                                                            <p>The status of the response</p>
+                                                
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                            200
+                                                        </td>    
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            status_text
+                                                        </td>
+                                                        <td>
+                                                            <p>A free-form human-readable description of the Response status.</p>
+                                                
+                                                        </td>
+                                                        <td>
+                                                        </td>
+                                                        <td>
+                                                            The action succeeded.
+                                                        </td>    
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                        </section>
+                                
+                        
+                            <section class="odxl-error-responses">
+                                <dl>
+                                        <dt class="odxl-error-response">
+                                            Error Code: 400                
+                                        </dt>
+                                        <dd class="odxl-error-response">
+                                                    <p>Bad Request</p>
+                                            
+                                                    
+                                            
+                                        </dd>
+                                        <dt class="odxl-error-response">
+                                            Error Code: 401                
+                                        </dt>
+                                        <dd class="odxl-error-response">
+                                                    <p>Unauthorized</p>
+                                            
+                                                    
+                                            
+                                        </dd>
+                                        <dt class="odxl-error-response">
+                                            Error Code: 403                
+                                        </dt>
+                                        <dd class="odxl-error-response">
+                                                    <p>Forbidden</p>
+                                            
+                                                    
+                                            
+                                        </dd>
+                                        <dt class="odxl-error-response">
+                                            Error Code: 404                
+                                        </dt>
+                                        <dd class="odxl-error-response">
+                                                    <p>Not Found</p>
+                                            
+                                                    
+                                            
+                                        </dd>
+                                        <dt class="odxl-error-response">
+                                            Error Code: 500                
+                                        </dt>
+                                        <dd class="odxl-error-response">
+                                                    <p>Internal Error</p>
+                                            
+                                                    
+                                            
+                                        </dd>
+                                        <dt class="odxl-error-response">
+                                            Error Code: 501                
+                                        </dt>
+                                        <dd class="odxl-error-response">
+                                                    <p>Not Implemented</p>
+                                            
+                                                    
+                                            
+                                        </dd>
+                                        <dt class="odxl-error-response">
+                                            Error Code: 503                
+                                        </dt>
+                                        <dd class="odxl-error-response">
+                                                    <p>Service Unavailable</p>
+                                            
+                                                    
+                                            
+                                        </dd>
+                                </dl>
+                            </section>
+                </div>
+            </div>
+    
+</div>
+<script src="bundle.js" type="application/javascript"></script>
+</body>
+</html>
