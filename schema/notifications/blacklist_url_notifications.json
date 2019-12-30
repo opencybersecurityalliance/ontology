@@ -18,6 +18,9 @@
                 "example": {
                     "url": "http://example.com"
                 }
+            },
+            "otherFields": {
+                "$ref": "../common_schema.json#/definitions/notificationOtherFields"
             }
         }
     }
