@@ -1,0 +1,38 @@
+{
+    "openDxlApi": "0.1",
+    "info": {
+        "title": "Unquarantine device notifications",
+        "version": "0.0.1",
+        "description": "Unquarantine device notifications"
+    },
+    "events": {
+        "/notification/unquarantine/device/by_hostname": {
+            "description": "Unquarantine device by hostname notifications",
+            "payload": {
+                "properties": {
+                    "$ref": "../openc2_schema.json#/definitions/x-target-hostname"
+                },
+                "required": [
+                    "hostname"
+                ],
+                "example": {
+                    "hostname": "testdevice.local.com"
+                }
+            }
+        },
+        "/notification/unquarantine/device/by_mac_address": {
+            "description": "Unquarantine device by MAC address notifications",
+            "payload": {
+                "properties": {
+                    "$ref": "../openc2_schema.json#/definitions/target-mac-address"
+                },
+                "required": [
+                    "mac_addr"
+                ],
+                "example": {
+                    "mac_addr": "B8:CA:3A:77:A5:AE"
+                }
+            }
+        }
+    }
+}
