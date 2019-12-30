@@ -18,6 +18,9 @@
                 "example": {
                     "hostname": "testdevice.local.com"
                 }
+            },
+            "otherFields": {
+                "$ref": "../common_schema.json#/definitions/notificationOtherFields"
             }
         },
         "/notification/quarantine/device/by_mac_address": {
@@ -32,6 +35,9 @@
                 "example": {
                     "mac_addr": "B8:CA:3A:77:A5:AE"
                 }
+            },
+            "otherFields": {
+                "$ref": "../common_schema.json#/definitions/notificationOtherFields"
             }
         }
     }

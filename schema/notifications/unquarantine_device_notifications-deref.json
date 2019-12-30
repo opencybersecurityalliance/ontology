@@ -21,6 +21,23 @@
                 "example": {
                     "hostname": "testdevice.local.com"
                 }
+            },
+            "otherFields": {
+                "service_id": {
+                    "description": "The identifier of the DXL service that is the source of the notification",
+                    "required": false,
+                    "example": "{32cd9168-338f-11e4-0d01-005056946833}"
+                },
+                "product_name": {
+                    "description": "The product that is the source of the message",
+                    "required": false,
+                    "example": "McAfee Threat Intelligence Exchange (TIE)"
+                },
+                "product_version": {
+                    "description": "The version of the product that is the source of the message",
+                    "required": false,
+                    "example": "3.0.0"
+                }
             }
         },
         "/notification/unquarantine/device/by_mac_address": {
@@ -37,6 +54,23 @@
                 ],
                 "example": {
                     "mac_addr": "B8:CA:3A:77:A5:AE"
+                }
+            },
+            "otherFields": {
+                "service_id": {
+                    "description": "The identifier of the DXL service that is the source of the notification",
+                    "required": false,
+                    "example": "{32cd9168-338f-11e4-0d01-005056946833}"
+                },
+                "product_name": {
+                    "description": "The product that is the source of the message",
+                    "required": false,
+                    "example": "McAfee Threat Intelligence Exchange (TIE)"
+                },
+                "product_version": {
+                    "description": "The version of the product that is the source of the message",
+                    "required": false,
+                    "example": "3.0.0"
                 }
             }
         }
