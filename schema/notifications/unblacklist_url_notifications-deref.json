@@ -1,0 +1,27 @@
+{
+    "openDxlApi": "0.1",
+    "info": {
+        "title": "Unblacklist URL notifications",
+        "version": "0.0.1",
+        "description": "Unblacklist URL notifications"
+    },
+    "events": {
+        "/notification/unblacklist/url": {
+            "description": "Unblacklist URL notification",
+            "payload": {
+                "properties": {
+                    "url": {
+                        "type": "string",
+                        "description": "Uniform Resource Identifier, [RFC3986]."
+                    }
+                },
+                "required": [
+                    "url"
+                ],
+                "example": {
+                    "url": "http://example.com"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+{
+    "openDxlApi": "0.1",
+    "info": {
+        "title": "Quarantine device notifications",
+        "version": "0.0.1",
+        "description": "Quarantine device notifications"
+    },
+    "events": {
+        "/notification/quarantine/device/by_hostname": {
+            "description": "Quarantine device by hostname notification",
+            "payload": {
+                "properties": {
+                    "hostname": {
+                        "type": "string",
+                        "description": "Internet host name as specified in [RFC1123]"
+                    }
+                },
+                "required": [
+                    "hostname"
+                ],
+                "example": {
+                    "hostname": "testdevice.local.com"
+                }
+            }
+        },
+        "/notification/quarantine/device/by_mac_address": {
+            "description": "Quarantine device by MAC address notification",
+            "payload": {
+                "properties": {
+                    "mac_addr": {
+                        "type": "string",
+                        "description": "A Media Access Control (MAC) address - EUI-48 or EUI-64 as defined in [EUI]"
+                    }
+                },
+                "required": [
+                    "mac_addr"
+                ],
+                "example": {
+                    "mac_addr": "B8:CA:3A:77:A5:AE"
+                }
+            }
+        }
+    }
+}
