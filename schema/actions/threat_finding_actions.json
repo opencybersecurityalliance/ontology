@@ -1,0 +1,32 @@
+{
+    "openDxlApi": "0.1",
+    "info": {
+        "title": "Blacklist URL actions",
+        "version": "0.0.1",
+        "description": "Blacklist URL actions"
+    },
+    "requests": {
+        "/action/threats/findings/details": {
+            "description": "Provides a detailed breakdown on threat findings",
+            "payload": {
+                "properties": {
+                    "$ref": "../openc2_schema.json#/definitions/target-device"
+                },
+                "required": [
+                    "url"
+                ],
+                "example": {
+                    "url": "http://example.com"
+                }
+            },
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
+            },
+            "errorResponses": {
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
+        }
+    }
+}
