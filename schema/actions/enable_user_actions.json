@@ -23,11 +23,11 @@
                 "payload": {
                     "properties": {
                         "username"
+                    },
+                    "example": {
+                        "username": "Corp\\jsmith"
                     }
                 },
-                "example": {
-                    "username": "corp\jsmith"
-                }
                 "otherFields": {
                     "$ref": "../common_schema.json#/definitions/responseOtherFields"
                 }
