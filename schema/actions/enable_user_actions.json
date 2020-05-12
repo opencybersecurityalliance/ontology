@@ -10,7 +10,7 @@
             "description": "Enable user by username",
             "payload": {
                 "properties": {
-                    "username"
+                    "$ref": "../openc2_schema.json#/definitions/x-target-username"
                 },
                 "required": [
                     "username"
@@ -22,7 +22,7 @@
             "response": {
                 "payload": {
                     "properties": {
-                        "username"
+                        "$ref": "../openc2_schema.json#/definitions/x-target-username"
                     },
                     "example": {
                         "username": "Corp\\jsmith"
