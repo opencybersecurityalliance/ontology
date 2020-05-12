@@ -1,0 +1,40 @@
+{
+    "openDxlApi": "0.1",
+    "info": {
+        "title": "Enable user actions",
+        "version": "0.0.1",
+        "description": "Enable user actions"
+    },
+    "requests": {
+        "/action/enable/user/by_username": {
+            "description": "Enable user by username",
+            "payload": {
+                "properties": {
+                    "username"
+                },
+                "required": [
+                    "username"
+                ],
+                "example": {
+                    "username": "jsmith"
+                }
+            },   
+            "response": {
+                "payload": {
+                    "properties": {
+                        "username"
+                    }
+                },
+                "example": {
+                    "username": "corp\jsmith"
+                }
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
+            },
+            "errorResponses": {
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
+        }
+    }
+}
