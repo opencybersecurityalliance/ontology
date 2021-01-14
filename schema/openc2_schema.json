@@ -103,6 +103,12 @@
                 "description": "Uniform Resource Identifier, [RFC3986]."
             }
         },
+        "x-target-username": {
+            "username": {
+                "type": "string",
+                "description": "String representing a user"
+            }
+        },
         "data-ipv4-address": {
             "type": "string",
             "description": "32 bit IPv4 address as defined in [RFC0791]"
