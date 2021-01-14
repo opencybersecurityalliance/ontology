@@ -1,0 +1,54 @@
+{
+    "openDxlApi": "0.1",
+    "info": {
+        "title": "Threat finding details",
+        "version": "0.0.1",
+        "description": "Threat finding details"
+    },
+    "requests": {
+        "/action/threats/findings/details/by_hostname": {
+            "description": "Provides a detailed breakdown on threat findings by hostname",
+            "payload": {
+                "properties": {
+                   "$ref": "../openc2_schema.json#/definitions/x-target-hostname"
+                },
+                "required": [
+                    "hostname"
+                ],
+                "example": {
+                   "hostname": "testdevice.local.com"
+                }
+            },
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
+            },
+            "errorResponses": {
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
+        },
+ 	"/action/threats/findings/details/by_mac_address": {
+            "description": "Provides a detailed breakdown on threat findings by mac addresss",
+            "payload": {
+                "properties": {
+                   "$ref": "../openc2_schema.json#/definitions/target-mac-address"
+                },
+                "required": [
+                    "mac_addr"
+                ],
+                "example": {
+                    "mac_addr": "B8:CA:3A:77:A5:AE"
+                }
+            },
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
+            },
+            "errorResponses": {
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
+        }
+    }
+}

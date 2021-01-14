@@ -1,0 +1,32 @@
+{
+    "openDxlApi": "0.1",
+    "info": {
+        "title": "SIEM Anomalies and Event Type IOCs",
+        "version": "0.0.1",
+        "description": "Anomalies and event type data detected by siem technology to create indicators of compromise"
+    },
+    "requests": {
+        "/action/threats/findings/de.ae/siem/ioc": {
+            "description": "Provides a detailed breakdown of IOC objects",
+            "payload": {
+                "properties": {
+                    "$ref": "../openc2_schema.json#/definitions/x-target-hostname"
+                },
+                "required": [
+                    "hostname"
+                ],
+                "example": {
+                    "hostname": "testdevice.local.com"
+                }
+            },
+            "response": {
+                "otherFields": {
+                    "$ref": "../common_schema.json#/definitions/responseOtherFields"
+                }
+            },
+            "errorResponses": {
+                "$ref": "../common_schema.json#/definitions/errorResponses"
+            }
+        }
+    }
+}
